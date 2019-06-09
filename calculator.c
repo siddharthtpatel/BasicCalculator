@@ -1,9 +1,9 @@
 #include<stdio.h>
-int calui()
+int calcui()
 {
     printf(" _________________________ \n");//25 underscores
     printf("│ _______________________ │\n");
-    printf("││                       ││\n"); //put a loop here and
+    printf("││%23d││\n",input); //take input in array of two
     printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
     printf("│     _______________     │\n");
     printf("│    │ + │ - │ × │ ÷ │    │\n"); //read the arrows
@@ -61,4 +61,33 @@ void reading()
                 return value;
          }
     }
+}
+
+void main
+{
+    int ch, value = 0;
+    calcui();
+    reading();
+    int ch, value = 0;
+    ch = getch ();
+    if(ch()==10)
+    {
+        if(arrow[0]=='^')
+        {
+        
+        }
+        else if (arrow[1]=='^')
+        {
+        
+        }
+        else if (arrow[2]=='^')
+        {
+        
+        }
+        else if (arrow[3]=='^')
+        {
+        
+        }
+    }
+    
 }
