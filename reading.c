@@ -10,7 +10,7 @@ void Exchange(int a, int b)
     arrow[b] = temp;
 }
 
-void main()
+void reading()
 {
     int ch, value = 0;
     ch = getch ();
