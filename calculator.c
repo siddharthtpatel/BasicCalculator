@@ -1,8 +1,8 @@
 #include <stdio.h>
-//#include <conio.h>
+#include <conio.h>
 #include <stdlib.h>
 
-int ch, value, y = 0;
+int ch, value=0, y=0;
 float input[2],output;
 char oper, arrow[4] ={'^',' ',' ',' '};
 
@@ -11,39 +11,44 @@ int firstentry()
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
     printf(" _________________________ \n");//25 underscores
-    printf("│ _______________________ │\n");
-    printf("││                       ││\n"); //put a loop here and get number of digits in the number
-    printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
-    printf("│     _______________     │\n");
-    printf("│    │ + │ - │ * │ / │    │\n"); //read the arrows
-    printf("│     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯     │\n");
-    printf("│      %c   %c   %c   %c      │\n",arrow[0],arrow[1],arrow[2],arrow[3]);
-    printf(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \n");
-    
+    printf("| ----------------------- |\n");
+    printf("||                       ||\n");
+    printf("||                       ||\n");
+    printf("| ----------------------- |\n");
+    printf("|     _______________     |\n");
+    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    |___|___|___|___|    |\n");
+    printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
+    printf("|_________________________| \n");
+
     printf("\n\nEnter the 1st number:");
-    scanf("%23d",&input[0]);
+    scanf("%23f",&input[0]);
+    fflush(stdin);
 
 }
 
 char operatorentry()
 {
     //selection
-    printf("\tCALCULATOR\n");
-    printf("\t~~~~~~~~~~\n\n");    
-    printf(" _________________________ \n");//25 underscores
-    printf("│ _______________________ │\n");
-    printf("││%23f││\n",input[0]); //put a loop here and get number of digits in the number
-    printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
-    printf("│     _______________     │\n");
-    printf("│    │ + │ - │ * │ / │    │\n"); //read the arrows
-    printf("│     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯     │\n");
-    printf("│¯¯¯¯¯ %c   %c   %c   %c      │\n",arrow[0],arrow[1],arrow[2],arrow[3]);
-    printf(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \n");
-
-    printf("\n\nSelect the operator");
     while(value!=1)
     {
+        printf("\tCALCULATOR\n");
+        printf("\t~~~~~~~~~~\n\n");
+        printf(" _________________________ \n");//25 underscores
+        printf("| ----------------------- |\n");
+        printf("||%23f||\n",input[0]);
+        printf("||                       ||\n");
+        printf("| ----------------------- |\n");
+        printf("|     _______________     |\n");
+        printf("|    | + | - | * | / |    |\n"); //read the arrows
+        printf("|    |___|___|___|___|    |\n");
+        printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
+        printf("|_________________________| \n");
+
+        printf("\n\nSelect the operator");
+
         value=reading();
+        system("cls");
     }
     if (arrow[0]=='^')
     {  oper='+';  }
@@ -53,7 +58,7 @@ char operatorentry()
     {  oper='*';  }
     else if (arrow[3]=='^')
     {  oper='/';  }
-        
+
 }
 
 int Exchange(int a, int b)
@@ -66,11 +71,11 @@ int Exchange(int a, int b)
 
 int reading()
 {
-    ch = getchar();
+    ch = getch ();
     if (ch == 0 || ch == 224)
     {
 
-        switch (getchar())
+        switch (getch())
         {
             case 75://LeftArrow
                 if(y>0)
@@ -91,7 +96,7 @@ int reading()
                     y = y+1;
                 }
                 else
-                {   
+                {
                     printf("\a");
                 }
                 return value;
@@ -100,13 +105,7 @@ int reading()
                 value = 1;
                 return value;
         }
-    }    
-    else if (ch == '13')
-    {
-        value = 1;
-            return value;
     }
-    
 }
 
 int secondentery()
@@ -114,33 +113,35 @@ int secondentery()
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
     printf(" _________________________ \n");//25 underscores
-    printf("│ _______________________ │\n");
-    printf("││%22f%c││\n",input[0],oper); //put a loop here and get number of digits in the number
-    printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
-    printf("│     _______________     │\n");
-    printf("│    │ + │ - │ * │ / │    │\n"); //read the arrows
-    printf("│     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯     │\n");
-    printf("│      %c   %c   %c   %c      │\n",arrow[0],arrow[1],arrow[2],arrow[3]);
-    printf(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \n");
-    
+    printf("| ----------------------- |\n");
+    printf("||%23f||\n",input[0]);
+    printf("||%23c||\n",oper);
+    printf("| ----------------------- |\n");
+    printf("|     _______________     |\n");
+    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    |___|___|___|___|    |\n");
+    printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
+    printf("|_________________________| \n");
+
     printf("\n\nEnter the 2nd number:");
-    scanf("%23d",&input[1]);
-    
+    scanf("%23f",&input[1]);
+
 }
 
 int flag()
 {
     printf("\tCALCULATOR\n");
-    printf("\t~~~~~~~~~~\n\n");    
+    printf("\t~~~~~~~~~~\n\n");
     printf(" _________________________ \n");//25 underscores
-    printf("│ _______________________ │\n");
-    printf("││%23f││\n",input[1]); //put a loop here and get number of digits in the number
-    printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
-    printf("│     _______________     │\n");
-    printf("│    │ + │ - │ * │ / │    │\n"); //read the arrows
-    printf("│     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯     │\n");
-    printf("│      %c   %c   %c   %c      │\n",arrow[0],arrow[1],arrow[2],arrow[3]);
-    printf(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \n");
+    printf("| ----------------------- |\n");
+    printf("||%23f||\n",input[0]);
+    printf("||%c%22f||\n",oper,input[1]);
+    printf("| ----------------------- |\n");
+    printf("|     _______________     |\n");
+    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    |___|___|___|___|    |\n");
+    printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
+    printf("|_________________________| \n");
 
 }
 
@@ -165,17 +166,18 @@ int result()
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
     printf(" _________________________ \n");//25 underscores
-    printf("│ _______________________ │\n");
-    printf("││%23f││\n",output); //put a loop here and get number of digits in the number
-    printf("│ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │\n");
-    printf("│     _______________     │\n");
-    printf("│    │ + │ - │ * │ / │    │\n"); //read the arrows
-    printf("│     ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯     │\n");
-    printf("│      %c   %c   %c   %c      │\n",arrow[0],arrow[1],arrow[2],arrow[3]);
-    printf(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ \n");
-    
-    printf("\n\tRESULT");
-    
+    printf("| ----------------------- |\n");
+    printf("||=%22f||\n",output);
+    printf("||                       ||\n");
+    printf("| ----------------------- |\n");
+    printf("|     _______________     |\n");
+    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    |___|___|___|___|    |\n");
+    printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
+    printf("|_________________________| \n");
+
+    printf("\n\tRESULT\n\n");
+
     return 0;
 }
 
@@ -185,9 +187,10 @@ int main()
     printf("\t~~~~~~~~~~\n\n");
     printf("HOW TO USE:\n");
     printf("0 Enter the 1st number\n");
-    printf("0 Select the operator using arrows and enter key\n");
-    printf("0 Enter the 2nd number");
-    printf("0 Press enter to get the result");
+    printf("0 Select the operator using arrows and enter the down arrow\n");
+    printf("0 Enter the 2nd number\n");
+    printf("0 Then press enter to get the result\n\n");
+    printf("  PRESS ENTER TO CONTINUE\n\n");
     getchar();
     system("cls");
 
@@ -201,6 +204,6 @@ int main()
     system("cls");
     result();
     getchar();
-    
+
     return 0;
 }
