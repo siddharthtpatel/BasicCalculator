@@ -6,7 +6,7 @@ int ch, value=0, y=0;
 float input[2],output;
 char oper, arrow[4] ={'^',' ',' ',' '};
 
-int firstentry()
+int firstentry() //takes the entry of 1st number
 {
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
@@ -16,7 +16,7 @@ int firstentry()
     printf("||                       ||\n");
     printf("| ----------------------- |\n");
     printf("|     _______________     |\n");
-    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    | + | - | * | / |    |\n"); 
     printf("|    |___|___|___|___|    |\n");
     printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
     printf("|_________________________| \n");
@@ -27,7 +27,7 @@ int firstentry()
 
 }
 
-char operatorentry()
+char operatorentry() //takes the entry of operator
 {
     //selection
     while(value!=1)
@@ -112,13 +112,13 @@ int secondentery()
 {
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
-    printf(" _________________________ \n");//25 underscores
+    printf(" _________________________ \n");
     printf("| ----------------------- |\n");
     printf("||%23f||\n",input[0]);
     printf("||%23c||\n",oper);
     printf("| ----------------------- |\n");
     printf("|     _______________     |\n");
-    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    | + | - | * | / |    |\n"); 
     printf("|    |___|___|___|___|    |\n");
     printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
     printf("|_________________________| \n");
@@ -132,13 +132,13 @@ int flag()
 {
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
-    printf(" _________________________ \n");//25 underscores
+    printf(" _________________________ \n");
     printf("| ----------------------- |\n");
     printf("||%23f||\n",input[0]);
     printf("||%c%22f||\n",oper,input[1]);
     printf("| ----------------------- |\n");
     printf("|     _______________     |\n");
-    printf("|    | + | - | * | / |    |\n"); //read the arrows
+    printf("|    | + | - | * | / |    |\n"); 
     printf("|    |___|___|___|___|    |\n");
     printf("|      %c   %c   %c   %c      |\n",arrow[0],arrow[1],arrow[2],arrow[3]);
     printf("|_________________________| \n");
