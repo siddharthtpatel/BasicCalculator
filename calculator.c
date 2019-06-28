@@ -61,7 +61,7 @@ char operatorentry() //takes the entry of operator
 
 }
 
-int Exchange(int a, int b)
+int Exchange(int a, int b)//exchange the block
 {
     int temp;
     temp = arrow[a];
@@ -69,7 +69,7 @@ int Exchange(int a, int b)
     arrow[b] = temp;
 }
 
-int reading()
+int reading()//reading the arrow keys
 {
     ch = getch ();
     if (ch == 0 || ch == 224)
@@ -108,7 +108,7 @@ int reading()
     }
 }
 
-int secondentery()
+int secondentery()//takes the second entry
 {
     printf("\tCALCULATOR\n");
     printf("\t~~~~~~~~~~\n\n");
@@ -145,7 +145,7 @@ int flag()
 
 }
 
-int result()
+int result() //the final result page
 {
     if (oper=='+')
     {
